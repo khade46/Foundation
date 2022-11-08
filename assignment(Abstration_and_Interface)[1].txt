@@ -1,0 +1,326 @@
+2. Create an abstract class Compartment to represent a rail coach. Provide an abstract function notice in this class. 
+public abstract String notice();
+Derive FirstClass, Ladies, General, Luggage classes from the compartment class. 
+Override the notice function in each of them to print notice message that is suitable to the specific type of  compartment.
+Create a class TestCompartment.Write main function to do the following:
+Declare an array of Compartment of size 10.
+Create a compartment of a type as decided by a randomly generated integer in the range 1 to 4.
+Check the polymorphic behavior of the notice method.
+[i.e based on the random  number genererated, the first compartment can be Luggage, the second one could be Ladies and so on..]
+
+3. Create an abstract class Instrument which is having the abstract function play. 
+Create three more sub classes from Instrument which is Piano, Flute, Guitar. 
+Override the play method inside all three classes printing a message 
+“Piano is playing  tan tan tan tan  ”  for Piano class
+“Flute is playing  toot toot toot toot”  for Flute class
+“Guitar is playing  tin  tin  tin ”  for Guitar class 
+Create an array of 10 Instruments.
+Assign different type of instrument to Instrument reference.
+Check for the polymorphic behavior of  play method.
+Use the instanceof operator to print which object is stored at which index of instrument array.
+
+4.What is the output of the pgm
+interface A
+{
+    private int i;
+}
+
+
+5.What is the output of the program
+
+interface A
+{
+    void myMethod();
+}
+ 
+class B
+{
+    public void myMethod()
+    {
+        System.out.println("My Method");
+    }
+}
+ 
+class C extends B implements A
+{
+     
+}
+ 
+class MainClass
+{
+    public static void main(String[] args) 
+    {
+        A a = new C();
+         
+        a.myMethod();
+    }
+}
+
+6.What is the output here
+
+
+interface X
+{
+    void methodX();
+}
+ 
+class Y implements X
+{
+    void methodX()
+    {
+        System.out.println("Method X");
+    }
+}
+
+7.Will this program execute if no why
+
+interface A
+{
+    int i = 111;
+}
+ 
+class B implements A 
+{
+    void methodB()
+    {
+        i = 222;
+    }
+}
+
+
+8.What is the output
+
+
+interface P
+{
+    String p = "PPPP";
+     
+    String methodP();
+}
+ 
+interface Q extends P
+{
+    String q = "QQQQ";
+     
+    String methodQ();
+}
+ 
+class R implements P, Q
+{
+    public String methodP()
+    {
+        return q+p;
+    }
+     
+    public String methodQ()
+    {
+        return p+q;
+    }
+}
+ 
+public class MainClass 
+{
+    public static void main(String[] args)
+    {
+        R r = new R();
+         
+        System.out.println(r.methodP());
+         
+        System.out.println(r.methodQ());
+    }
+}
+
+
+9.Can interfaces have constructors?
+
+
+
+10.Is the below program written correctly? If yes, what will be the output?
+
+class A implements B
+{   
+    public int methodB(int i)
+    {
+        return i =+ i * i;
+    }
+}
+ 
+interface B
+{
+    int methodB(int i);
+}
+ 
+public class MainClass 
+{
+    public static void main(String[] args)
+    {
+        B b = new A();
+         
+        System.out.println(b.methodB(2));
+    }
+}
+
+
+11.Can you find out the errors in the following code?
+
+
+interface A
+{
+    {
+        System.out.println("Interface A");
+    }
+     
+    static
+    {
+        System.out.println("Interface A");
+    }
+}
+
+
+
+12.How do you access interface field ‘i’ in the below code?
+
+class P
+{
+    interface Q
+    {
+        int i = 111;
+    }
+}
+
+
+
+//question 1
+
+import java.util.Random;
+abstract class Compartment{
+    public abstract String notice();
+}
+class FirstClass extends Compartment{
+    @Override
+    public String notice() {
+        return "This is first class compartment";
+    }
+}
+class Ladies extends Compartment{
+    public String notice(){
+        return "This is Ladies Compartment";
+    }
+}
+class General extends Compartment{
+    public String notice(){
+        return "this is general compartment";
+    }
+}
+class Luggage extends Compartment{
+    public String notice(){
+        return "this is luggage compartment";
+    }
+}
+class TestCompartment{
+    public static void main(String args[]){
+        Compartment[] arr=new Compartment[10];
+        Random random=new Random();
+        int number;
+        for(int i=0;i<10;i++){
+            number=1+random.nextInt(4);
+            if(number==1)
+                arr[i]=new FirstClass();
+             else if (number==2)
+                arr[i]=new Ladies();
+             else if (number==3)
+                arr[i]=new General();
+             else if (number==4)
+                arr[i]=new Luggage();
+            System.out.println(number+" -> "+arr[i].notice());
+        }
+    }
+}
+
+//question no. 2
+
+import java.util.Random;
+abstract class Instrument{
+    public abstract void play();
+}
+class Piano extends Instrument{
+    public void play(){
+        System.out.println("Piano is playing  tan tan tan tan");
+    }
+}
+class Flute extends Instrument{
+    public void play(){
+        System.out.println("Flute is playing  toot toot toot toot");
+    }
+}
+class Guitar extends Instrument{
+    public void play(){
+        System.out.println("Guitar is playing  tin  tin  tin");
+    }
+}
+class TestInstrument{
+    public static void main(String args[]){
+        Instrument arr[]=new Instrument[10];
+        Random rand=new Random();
+        int num;
+        for(int i=0;i<10;i++){
+            num=1+rand.nextInt(3);
+            if(num==1)
+                arr[i]=new Piano();
+            else if (num==2)
+                arr[i]=new Flute();
+            else if (num==3)
+                arr[i]=new Guitar();
+            arr[i].play();
+
+        }
+        for(int i=0;i<10;i++){
+            if(arr[i] instanceof Piano)
+                System.out.println("Piano is stored at index "+i);
+            else if (arr[i] instanceof Flute)
+                System.out.println("Flute is stored at index "+i);
+            else if (arr[i] instanceof Guitar)
+                System.out.println("Guitar is stored at index "+i);
+
+            }
+
+        }
+        }
+
+// question no. 3
+
+//members of interface cannot be private.
+
+// question no. 4
+
+//Output: My Method
+
+// question no. 6
+
+// method of interface X is being overridden in class Y
+
+//question no. 7
+
+/*Since an interface can not be instantiated directly, the interface variables are static and final by default. We are not allowed to change them.*/
+
+//question no. 8
+
+/*Output:
+  QQQQPPPP
+  PPPPQQQQ */
+
+//question no. 9
+
+// NO. we cannot have a constructor within an interface
+
+//question no. 10
+
+//Output: 4
+
+//question no. 11
+
+//we cannot have a static block in interface.
+
+//question no. 12
+
+// P.Q.i

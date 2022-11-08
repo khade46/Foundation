@@ -1,0 +1,742 @@
+
+Java  Questions
+.1.Create a class named 'Student' with String variable 'name' and integer 
+variable 'roll_no'.        Assign the value of roll_no as '2' and that of name 
+as "John" by creating an object of the class Student.
+
+2.Assign and print the roll number, phone number and address of two 
+students having names "Sam" and "John" respectively by creating two 
+objects of class 'Student'.
+
+3. Write a program to print the area and perimeter of a triangle having 
+sides of 3, 4 and 5 units by creating a class named 'Triangle' without any 
+parameter in its constructor.
+
+4.Write a program to print the area and perimeter of a triangle having 
+sides of 3, 4 and 5 units by creating a class named 'Triangle' with 
+constructor having the three sides as its parameters.
+
+5. Write a program to print the area of two rectangles having sides (4,5) 
+and (5,8) respectively by creating a class named 'Rectangle' with a 
+method named 'Area' which returns the area and length and breadth 
+passed as parameters to its constructor.
+
+6. Write a program to print the area of a rectangle by creating a class 
+named 'Area' taking the values of its length and breadth as parameters of 
+its constructor and having a method named 'returnArea' which returns the
+area of the rectangle. Length and breadth of rectangle are entered 
+through keyboard.
+
+7. Print the sum, difference and product of two complex numbers by 
+creating a class named 'Complex' with separate methods for each 
+operation whose real and imaginary parts are entered by user.
+
+8.Write a program that would print the information (name, year of joining, 
+salary, address) of three employees by creating a class named 
+'Employee'. The output should be as follows:
+Name        Year of joining        Address
+Robert            1994                64C- WallsStreat
+Sam                2000                68D- WallsStreat
+John                1999                26B- WallsStreat
+
+9. The Matrix class has methods for each of the following:
+1 - get the number of rows
+2 - get the number of columns
+3 - set the elements of the matrix at given position (i,j)
+4 - adding two matrices. If the matrices are not addable, "Matrices cannot 
+be added" will be displayed.
+5 - multiplying the two matrices
+
+10. Write a program to print the names of students by creating a Student 
+class. If no name is passed while creating an object of Student class, then 
+the name should be "Unknown", otherwise the name should be equal to 
+the String value passed while creating object of Student class.
+
+11. Will the following code snippet compile successfully? If yes, what is the
+output of the following program?
+public class Myclass 
+{
+   private int x = 10;
+   static int m1() {
+       int y = x;
+       return y;
+    }
+public static void main(String[] args) {
+     m1();
+   }
+}
+
+12.Identify the error in the following code snippet. If there is no error then 
+what will be the output of the program?
+public class Myclass 
+{
+   private int x = 10;
+   static int m1()
+  {
+      Myclass obj = new Myclass();
+       int y = obj.x;
+       return y;
+   }
+public static void main(String[] args) {
+     System.out.println(m1());
+   }
+}
+
+13.what is the output 
+public class Myclass 
+{
+   static int a = 20;
+   static int b = 30;
+   static int c = 40;
+   Myclass() 
+  {
+      a = 200;
+   }
+static void m1() {
+      b = 300;
+}
+static {
+      c = 400;
+}
+public static void main(String[] args) {
+     System.out.println(a);
+     System.out.println(b);
+     System.out.println(c);
+   }
+}
+
+14.whats the output
+public class Myclass {
+     static int a = 20;
+Myclass() {
+     a = 200;
+}
+public static void main(String[] args) {
+    new Myclass();
+    System.out.println(a);
+  }
+}
+
+15.Whats the error in the code
+public class Myclass {
+  static int a = 20;
+ Myclass() {
+       a++;
+  }
+ void m1()  {
+       a++;
+       System.out.println(a);
+  }
+public static void main(String[] args) 
+{
+    Myclass obj = new Myclass();
+    Myclass obj2 = new Myclass();
+    Myclass obj3 = new Myclass();
+       obj3.m1();
+   }
+}
+
+16.Will this program execute what will be the output
+public class Test
+{
+  Test(Test t) {
+    m1();
+    System.out.println("Constructor");
+  }
+  void m1() {
+    m2();
+    System.out.println("Instance method");
+  }
+  static void m2() {
+     System.out.println("Static method");
+  }
+public static void main(String[] args)
+{
+     new Test(null);
+  }
+}
+
+17.whats the output
+import java.util.Scanner;
+class Figure
+{
+    final int length = 5;
+    final int bredth = 4;
+    final void area()
+    {
+        int a = length * bredth;
+        System.out.println("Area:"+a);
+    }
+}
+class Rectangle extends Figure
+{
+    final void rect()
+    {
+        System.out.println("This is rectangle");
+    }
+}
+final public class Final_Use extends Rectangle
+{
+    public static void main(String[] args) 
+    {
+        Final_Use obj = new Final_Use();
+        obj.rect();
+        obj.area();
+    }
+}
+
+18. Create a class with a method that prints "This is parent class" and its 
+subclass with another method that prints "This is child class". Now, create 
+an object for each of the class and call
+a - method of parent class by object of parent class
+b - method of child class by object of child class
+c - method of parent class by object of child class
+
+19. Create a class named 'Member' having the following members:
+Data members
+1 - Name
+2 - Age
+3 - Phone number
+4 - Address
+5 - Salary
+It also has a method named 'printSalary' which prints the salary of the 
+members.
+Two classes 'Employee' and 'Manager' inherits the 'Member' class. The 
+'Employee' and 'Manager' classes have data members 'specialization' and 
+'department' respectively. Now, assign name, age, phone number, 
+address and salary to an employee and a manager by making an object of
+both of these classes and print the same.
+
+20. Create a class named 'Rectangle' with two data members 'length' and 
+'breadth' and two methods to print the area and perimeter of the 
+rectangle respectively. Its constructor having parameters for length and 
+breadth is used to initialize length and breadth of the rectangle. Let class 
+'Square' inherit the 'Rectangle' class with its constructor having a 
+parameter for its side (suppose s) calling the constructor of its parent 
+class as 'super(s,s)'. Print the area and perimeter of a rectangle and a 
+square.
+
+21  whats the output
+class One
+{
+protected void getData()
+{
+System.out.println("Inside GFG");
+}
+}
+class Two extends One
+{
+protected void getData()
+{
+System.out.println("Inside GeeksforGeeks");
+}
+}
+public class Test
+{
+public static void main(String[] args)
+{
+One obj = new Two();
+obj.getData();
+}
+}
+
+22. can we overload main() method?
+
+23.what is the output 
+public class Myclass {
+     static int a = 20;
+Myclass() {
+     a = 200;
+}
+public static void main(String[] args) {
+    new Myclass();
+    System.out.println(a);
+  }
+}
+
+24.class A {
+ void sum(int x, int y){
+  System.out.println("Sum of two numbers: " +(x+y));  
+ }
+ void sum(int x, int y, int z){
+  System.out.println("Sum of three numbers: " +(x+y+z));  
+ }
+public static void main(String[] args){
+ A a = new A();
+  a.sum(20, 30);
+  a.sum(30, 40, 50);
+ }
+}
+
+25.what is the output 
+class A {
+ void sum(int x, int y){
+  System.out.println("Sum of two numbers: " +(x+y));  
+ }
+ void sum(int y, int x){
+  System.out.println("Sum of three numbers: " +(x+y));  
+ }
+public static void main(String[] args){
+ A a = new A();
+  a.sum(20, 30);
+ }
+}
+
+26.what is the output
+class A {
+ void m1(A a){
+  System.out.println("m1 method in class A");  
+ }
+}
+class B extends A {
+ public void m1(A a){
+  System.out.println("m1 method in class B");
+ }
+}
+public class Test{
+public static void main(String[] args){
+ A a = new A();
+ a.m1(a);
+ a.m1(new B());
+ 
+B b = new B();
+  b.m1(null);
+ 
+ a = b;
+ a.m1(null);
+ a.m1(new A());
+  }
+}
+
+27.What is the output 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import javax.sql.SQLException;
+public class ExceptionInterviewQuestion_01 {
+    public static void main(String[] args) {
+            try {
+                test();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (SQLException e) {\
+                e.printStackTrace();
+            }
+    }
+    public static void test() throws IOException, SQLException, 
+FileNotFoundException{   
+              System.out.println("Inside test() method");
+    }
+}
+
+28.what is the output
+public class TestException3 {
+    public static void main(String[] args) {
+        try{
+        bar();
+        }catch(NullPointerException e){
+            e.printStackTrace();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+           foo();
+    }
+    public static void bar(){
+    }
+    public static void foo() throws NullPointerException{
+    }
+}
+
+
+
+
+
+
+//question no. 1
+
+class Student{
+    String name;
+    int rollNo;
+    public static void main(String args[]){
+        Student obj=new Student();
+        obj.name="John";
+        obj.rollNo=2;
+        System.out.println(obj.name+" "+obj.rollNo);
+    }
+}
+
+//question no. 2
+
+class Student{
+    String add,name;
+    int rollNo,phoneNo;
+    public static void main(String args[]){
+        Student obj1=new Student();
+        Student obj2=new Student();
+        obj1.name="Sam";
+        obj1.add="pune,Maharashtra";
+        obj1.rollNo=1;
+        obj1.phoneNo=12345;
+        obj2.name="John";
+        obj2.add="Mumbai,Maharashtra";
+        obj2.rollNo=2;
+        obj2.phoneNo=22345;
+        System.out.println("1st Student data -> " +obj1.name+" "+obj1.add+" "+obj1.rollNo+" "+obj1.phoneNo);
+        System.out.println("2nd Student data -> " +obj2.name+" "+obj2.add+" "+obj2.rollNo+" "+obj2.phoneNo);
+    }
+}
+
+//question no. 3
+
+class Triangle{
+    int a=3,b=4,c=5;
+    float area,perimeter;
+    Triangle(){
+        area=(a*b)/2;
+        perimeter=(a+b+c);
+        System.out.println("area = "+area+" perimeter = "+perimeter);
+    }
+    public static void main(String args[]){
+        Triangle obj=new Triangle();
+    }
+
+}
+
+//question no. 4
+
+class Triangle{
+    int a,b,c;
+    float area,perimeter;
+    Triangle(int a, int b, int c){
+        this.a=a;
+        this.b=b;
+        this.c=c;
+        area=(a*b)/2;
+        perimeter=a+b+c;
+        System.out.println("area = "+area+" perimeter = "+perimeter);
+    }
+    public static void main(String args[]){
+        Triangle obj=new Triangle(3,4,5);
+    }
+}
+
+//question no. 5
+
+class Rectangle{
+    int l,b;
+    Rectangle(int l, int b){
+        this.l=l;
+        this.b=b;
+    }
+    public int area(){
+        return l*b;
+    }
+    public static void main(String args[]){
+        Rectangle obj=new Rectangle(4,5);
+        System.out.println( obj.area());
+        Rectangle obj2=new Rectangle(5,8);
+        System.out.println(obj2.area());
+    }
+}
+
+//question no. 6
+
+class Area{
+    int l,b;
+    Area(int l, int b){
+        this.l=l;
+        this.b=b;
+    }
+    public int returnArea(){
+        return l*b;
+    }
+    public static void main(String args[]){
+        Area obj=new Area(4,5);
+        System.out.println( obj.returnArea());
+    }
+}
+
+//question no. 7
+
+import java.util.Scanner;
+
+class ComplexNo{
+    int real,img;
+    public void input(){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter the real part");
+        real=sc.nextInt();
+        System.out.println("enter the imaginary part");
+        img=sc.nextInt();
+    }
+    public void display(){
+        System.out.println(real+" +i"+img);
+    }
+    ComplexNo add(ComplexNo c2){
+        ComplexNo res=new ComplexNo();
+        res.real=real+c2.real;
+        res.img=img+c2.img;
+        return res;
+    }
+    ComplexNo sub(ComplexNo c2) {
+        ComplexNo res = new ComplexNo();
+        res.real = real - c2.real;
+        res.img = img - c2.img;
+        return res;
+    }
+    ComplexNo mul(ComplexNo c2) {
+        ComplexNo res = new ComplexNo();
+        res.real = (real*c2.real)-(img*c2.img);
+        res.img = (real*c2.img)+(img*c2.real);
+        return res;
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        ComplexNo c1=new ComplexNo();
+        ComplexNo c2=new ComplexNo();
+        c1.input();
+        c2.input();
+        ComplexNo c3=new ComplexNo();
+        c3=c1.add(c2);
+        System.out.println("first complex no.");
+        c1.display();
+        System.out.println("second complex no.");
+        c2.display();
+        System.out.println("sum of complex nos.");
+        c3.display();
+        System.out.println("diff of complex nos.");
+        c3=c1.sub(c2);
+        c3.display();
+        System.out.println("product of complex nos.");
+        c3=c1.mul(c2);
+        c3.display();
+    }
+}
+
+//question no. 8
+
+class Employee{
+    String name,add;
+    int yearOfJoining;
+    Employee(String name,String add,int yearOfJoining){
+        this.name=name;
+        this.add=add;
+        this.yearOfJoining=yearOfJoining;
+    }
+    void display(){
+        System.out.println(name+"   "+yearOfJoining+"   "+add);
+    }
+    public static void main(String args[]){
+        System.out.println("Name   Year of Joining   Address");
+        Employee obj1=new Employee("Robert","64C-Wall Street",1994);
+        Employee obj2=new Employee("Sam","68D-Wall Street",2000);
+        Employee obj3=new Employee("John","64b-Wall Street",1999);
+        obj1.display();
+        obj2.display();
+        obj3.display();
+    }
+}
+
+//question no. 10
+
+class Student{
+    String name;
+    Student(){
+        name="Unknown";
+        System.out.println(name);
+    }
+    Student(String name){
+        this.name=name;
+        System.out.println(name);
+    }
+    public static void main(String args[]){
+        Student obj1=new Student("Aakash");
+        Student obj2=new Student("Sam");
+        Student obj3=new Student();
+    }
+}
+
+//question no. 11
+
+No.
+Static methods cannot modify Non-static fields since - For using a Non-Static field (outside the class) you must instantiate a class object, But for using a Static method there is no need for object instantiation at all.
+
+//question no. 12
+
+There will be no error.
+Output: 10
+
+//question no. 13
+
+Output:
+20
+30
+400
+
+//question no.14
+
+Output:
+200
+
+//question no. 15
+
+No space between Myclassobj. If it is a typing mistake and we write it as "Myclass obj=new Myclass();" then there is no error.
+
+//question no. 16
+
+Output:
+Static method
+Instance method
+Constructor
+
+//question no. 17
+
+Output:
+This is rectangle
+Area:20
+
+//question no. 18
+
+class Parent{
+    void displayP(){
+        System.out.println("this is parent class");
+    }
+}
+class Child extends Parent{
+    void displayC(){
+        System.out.println("this is child class");
+    }
+    public static void main(String args[]){
+        Parent obj1=new Parent();
+        Child obj2=new Child();
+        obj1.displayP();
+        obj2.displayC();
+        obj2.displayP();
+    }
+}
+
+//question no. 19
+
+class Member{
+    String name,add;
+    int phoneNo,age,salary;
+    public void getData(String n, int a,int phone,String ad,int sal){
+        name=n;
+        age=a;
+        phoneNo=phone;
+        add=ad;
+        salary=sal;
+        System.out.println(name+" "+age+" "+phoneNo+" "+add);
+    }
+    public void printSalary(){
+        System.out.println("Salary is; "+salary);
+    }
+}
+class Employee extends Member{
+    String specialization="software developer";
+}
+class Manager extends Member{
+    String department="IT";
+}
+public class Main{
+    public static void main(String args[]){
+        Employee emp=new Employee();
+        Manager man=new Manager();
+        emp.getData("Sam",28,12345,"64B WallStreet",100000);
+        emp.printSalary();
+        System.out.println(emp.specialization);
+        man.getData("John",34,4657839,"64C WallStreet",200000);
+        man.printSalary();
+        System.out.println(man.department);
+    }
+}
+
+//question no. 20
+
+class Rectangle{
+    int length,breadth;
+    Rectangle(int length,int breadth){
+        this.length=length;
+        this.breadth=breadth;
+    }
+    void area(){
+        int area=length*breadth;
+        System.out.println("area = "+area);
+    }
+    void perimeter(){
+        int peri=2*(length+breadth);
+        System.out.println("perimeter = "+peri);
+    }
+}
+class Square extends Rectangle{
+    Square(int s){
+        super(s,s);
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        Rectangle rec = new Rectangle(3,9);
+        rec.area();
+        rec.perimeter();
+        Square sqr = new Square(4);
+        sqr.area();
+        sqr.perimeter();
+    }
+}
+
+//question no. 21
+
+Inside GeeksforGeeks
+
+//question no. 22
+
+The answer is, yes, we can overload the main() method. But remember that the JVM always calls the original main() method. It does not call the overloaded main() method.
+
+public class MainMethodOverload1  
+{   
+// Overloaded main() method 1   
+//invoked when an int value is passed  
+public static void main(Integer args)   
+{   
+System.out.println("Overloaded main() method invoked that parses an integer argument");   
+}   
+// Overloaded main() method 2   
+//invoked when a char is passed  
+public static void main(char args)   
+{   
+System.out.println("Overloaded main() method invoked that parses a char argument");   
+}   
+//Original main() method  
+public static void main(String[] args)   
+{   
+System.out.println("Original main() method invoked");   
+}   
+}
+
+//question no. 23
+
+Output: 200
+
+//question no. 24
+
+Output:
+Sum of two numbers: 50
+Sum of three numbers: 120
+
+//question no. 25
+
+It will show an error as both the methods are having same return type and same parameters.
+
+//question no. 26
+
+m1 method in class A
+m1 method in class A
+m1 method in class B
+m1 method in class B
+m1 method in class B
+
+//question no. 28
+
+code runs without any error and nothing is printed in output.  
